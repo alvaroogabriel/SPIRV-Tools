@@ -854,6 +854,13 @@ Optimizer::PassToken CreateAmdExtToKhrPass();
 // propagated into their final positions.
 Optimizer::PassToken CreateInterpolateFixupPass();
 
+// UE Change Begin: Implement a fused-multiply-add pass to reduce the
+// possibility of re-association. Create a pass that will fuse floating point
+// multiply+add pairs to avoid re-association of instructions.
+Optimizer::PassToken CreateFusedMultiplyAddPass();
+// UE Change End: Implement a fused-multiply-add pass to reduce the possibility
+// of re-association.
+
 }  // namespace spvtools
 
 #endif  // INCLUDE_SPIRV_TOOLS_OPTIMIZER_HPP_
