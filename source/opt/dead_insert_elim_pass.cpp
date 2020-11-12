@@ -140,6 +140,9 @@ void DeadInsertElimPass::MarkInsertChain(
   }
   // If insert chain ended with phi, do recursive call on each operand
   if (insInst->opcode() != SpvOpPhi) return;
+  // UE Change Begin: Verify phi before dereferencing.
+  if (visited_phis == nullptr) return;
+  // UE Change End: Verify phi before dereferencing.
   // Mark phi visited to prevent potential infinite loop. If phi is already
   // visited, return to avoid infinite loop.
   if (visited_phis->count(insInst->result_id()) != 0) return;
