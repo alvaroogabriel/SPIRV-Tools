@@ -96,6 +96,10 @@ DiagnosticStream::~DiagnosticStream() {
         level = SPV_MSG_WARNING;
         break;
       case SPV_UNSUPPORTED:
+      case SPV_CLOSE_FATAL:
+        error_ = SPV_CLOSE_FATAL;
+        out = "Fatal error, closing..."
+        break;
       case SPV_ERROR_INTERNAL:
       case SPV_ERROR_INVALID_TABLE:
         level = SPV_MSG_INTERNAL_ERROR;
