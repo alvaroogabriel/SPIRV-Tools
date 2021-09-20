@@ -133,6 +133,10 @@ std::string spvResultToString(spv_result_t res) {
     case SPV_SUCCESS:
       out = "SPV_SUCCESS";
       break;
+      
+    case spv_asynchronously:
+      out = "spv_asynchronously";
+      break;
     case SPV_UNSUPPORTED:
       out = "SPV_UNSUPPORTED";
       break;
